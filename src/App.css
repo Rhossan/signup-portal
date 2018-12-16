@@ -1,22 +1,136 @@
-
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 html, body {
   height: 100%;
 }
 body {
+  width: 1280px;
+  height: 800px;
   background-color: #2c9db7;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modal-container{
-  width: 280px;
-  height: 400px;
-  background-color: black;
+.container{
+  width: 400px;
+  height: 280px;
+  border-radius: 2px;
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
 
-  text-align: center;
+
+  /* text-align: center; */
   display: flex;
   flex-direction: column;
+  /* justify-content: flex-start; */
+}
+
+.content {
+  margin: 40px 30px 0px 30px;
+  /* margin-top: 40px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  /* font-family: 'ProximaNova-Regular', Courier, monospace;
+  font-size: 20px;
+  color: #283647; */
+  width: 191px;
+  height: 24px;
+  font-family: 'ProximaNova-Regular';
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  text-align: left;
+  color: #283647;
+  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
+  /* border: 2px solid black; */
+}
+
+.sub-header{
+  width: 320px;
+  height: 20px;
+  font-family: 'ProximaNova';
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: #798898;
+  margin-bottom: 10px;
+}
+
+.line{
+  width: 340px;
+  height: 1px;
+  background-color: #e2e6eb;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 340px;
+  height: 50px;
+}
+
+.form-input{
+  /* padding-left: 15px; */
+  width: 100%;
+  height: 100%;
+  /* border-radius: 5px; */
+  border: none;
+  border: solid 1px #e2e6eb;
+  border-radius: 2px;
+}
+
+.form-input::placeholder{
+  width: 127px;
+  height: 20px;
+  opacity: 0.5;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: -0.2px;
+  text-align: left;
+  text-indent: 15px;
+  color: #798898;
+}
+
+/* button[type="submit"] */
+.button-style{
+  align-self: flex-end;
+  margin-top: 20px;
+  width: 150px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: #2c9db7;
+}
+
+.button-style span{
+  width: 35px;
+  height: 16px;
+  font-family: 'courier';
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #ffffff;
 }
 
 /* .App {

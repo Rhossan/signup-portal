@@ -1,15 +1,31 @@
-import React, { Component } from 'react';
-import Modal from 'react-modal';
+import React from 'react';
+import { createPortal } from 'react-dom';
 
+const modalRoot = document.getElementById('modal');
 
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        backgroundColor: 'red'
+class Modal extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.el = document.createElement('div');
     }
-};
+
+    componentDidMount(){
+        modalRoot.appendChild(this.el);
+    }
+
+    componentWillUnmount(){
+        modalRoot.removeChild(this.el);
+    }
+
+
+    render(){
+        return createPortal(this.props.children, this.el);
+    }
+
+}
+
+
+export default Modal;
 
 
