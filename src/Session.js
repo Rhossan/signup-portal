@@ -1,13 +1,20 @@
 import React from 'react';
+import Modal from './Modal';
+import EmailImg1 from "./img/ic-large-email-generic.png";
+import EmailImg2 from "./img/ic-large-email-generic@2x.png";
+import EmailImg3 from "./img/ic-large-email-generic@3x.png";
 
 
 class Session extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = {email: ''};
+        this.state = {email: '', showModal: false };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
+
+    toggleModal = () => this.setState({showModal : !this.state.showModal})
 
     handleFormSubmit() {
         //make a fetch request to backend to check if email exists,
@@ -19,6 +26,7 @@ class Session extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
     render(){
+        const {showModal} = this.state;
         return(
             <div className='container'>
                 <div className='content'>
@@ -40,6 +48,31 @@ class Session extends React.Component {
                         <button className='button-style'>
                             <span>NEXT</span>
                         </button>
+
+                        <button onClick={this.toggleModal}>click me</button>
+
+                        {
+                            showModal ? (
+                                <Modal>
+                                    <div className='modal-content'>
+                                        <div className='email-background'>
+                                            {/* <!-- png --> */}
+                                            <img 
+                                            src={EmailImg1}
+                                            srcset={`${EmailImg2} 2x, ${EmailImg3} 3x`}
+                                            className="ic_large_email_generic"
+                                            alt='email'
+                                            />
+                                            
+                                        </div>
+
+                                        <div className='modal-header'>That looks familiar</div>
+                                        <div className='modal-text'>That email looks like it’s part of an exisitng company. Check your email for an invite to your company.</div>
+                                    </div>
+                                    
+                                </Modal>
+                            ) : null
+                        }
 
                 </div>
             
